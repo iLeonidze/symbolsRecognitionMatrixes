@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Work 2</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+    <div class="sections">
+        <div class="section">
+            <h1>Train</h1>
+            <p>Drag-n-drop train images here</p>
+            <div class="workspace partly1">
+                <label for="trainingName">Symbol name:</label>
+                <input id="trainingName" value="A" autofocus />
+            </div>
+            <div class="workspace partly2 cursor">
+                <canvas id="imageView1"></canvas>
+            </div>
+        </div>
+        <div class="section">
+            <h1>Input</h1>
+            <p>Draw your symbol here</p>
+            <div class="workspace partly3 crosshair">
+                <div class="canvas">
+                    <canvas id="imageView2"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <h1>Output</h1>
+            <p>Recongized symbol here</p>
+            <div class="workspace cursor">
+                <div class="symbol" id="recognizedSymbol">-</div>
+                <div class="symbol mini" id="recognizedSymbolPercentage">-</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="controls">
+
+        <h1>Controls</h1>
+        <div class="button" onmousedown="networks=[];">
+            Do reset train data
+        </div>
+        <div class="button" onmousedown="context.clearRect(0, 0, canvas.width, canvas.height);context2.clearRect(0, 0, canvas2.width, canvas2.height);">
+            Clear canvases
+        </div>
+
+    </div>
+    <script src="jquery-3.3.1.min.js"></script>
+    <script src="engine.js"></script>
+</body>
+</html>
