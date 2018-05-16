@@ -96,7 +96,19 @@ body > .sections > .section > .workspace > input {
 }
 .partly2 {
     top: 160px!important;
+    z-index: 5;
 }
+.partly2.hiddenLayer {
+    z-index: 4;
+    background: none!important;
+    filter: blur(15px);
+}
+.partly2.hiddenBackground {
+    z-index: 2;
+}
+/*.partly2.hiddenLayer > div {
+    filter: blur(15px);
+}*/
 .partly3 {
     top: 120px!important;
     bottom: 60px!important;
@@ -143,6 +155,11 @@ body > .controls > .button {
     cursor: pointer;
     transition: .1s ease;
     margin-right: 20px;
+    margin-bottom: 20px;
+}
+.training {
+    margin-right: 5px!important;
+    margin-left: 0!important;
 }
 body > .controls > .button:hover {
     transform: scale(1.04);

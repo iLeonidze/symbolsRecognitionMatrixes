@@ -15,9 +15,13 @@
                 <label for="trainingName">Symbol name:</label>
                 <input id="trainingName" value="A" autofocus />
             </div>
-            <div class="workspace partly2 cursor">
+            <div class="workspace partly2 cursor" style="background:rgba(255,255,255,.2);">
                 <canvas id="imageView1"></canvas>
             </div>
+            <div class="workspace partly2 hiddenLayer" id="trainedMatrix">
+
+            </div>
+            <div class="workspace partly2 hiddenBackground"></div>
         </div>
         <div class="section">
             <h1>Input</h1>
@@ -39,13 +43,96 @@
     </div>
 
     <div class="controls">
-
-        <h1>Controls</h1>
-        <div class="button" onmousedown="networks=[];">
+        <h1 style="margin-top: -35px;">Training controls</h1>
+        <div class="button training" onmousedown="train('Q');">
+            Q
+        </div>
+        <div class="button training" onmousedown="train('W');">
+            W
+        </div>
+        <div class="button training" onmousedown="train('E');">
+            E
+        </div>
+        <div class="button training" onmousedown="train('R');">
+            R
+        </div>
+        <div class="button training" onmousedown="train('T');">
+            T
+        </div>
+        <div class="button training" onmousedown="train('Y');">
+            Y
+        </div>
+        <div class="button training" onmousedown="train('U');">
+            U
+        </div>
+        <div class="button training" onmousedown="train('I');">
+            I
+        </div>
+        <div class="button training" onmousedown="train('O');">
+            O
+        </div>
+        <div class="button training" onmousedown="train('P');">
+            P
+        </div>
+        <div class="button training" onmousedown="train('A');">
+            A
+        </div>
+        <div class="button training" onmousedown="train('S');">
+            S
+        </div>
+        <div class="button training" onmousedown="train('D');">
+            D
+        </div>
+        <div class="button training" onmousedown="train('F');">
+            F
+        </div>
+        <div class="button training" onmousedown="train('G');">
+            G
+        </div>
+        <div class="button training" onmousedown="train('H');">
+            H
+        </div>
+        <div class="button training" onmousedown="train('J');">
+            J
+        </div>
+        <div class="button training" onmousedown="train('K');">
+            K
+        </div>
+        <div class="button training" onmousedown="train('L');">
+            L
+        </div>
+        <div class="button training" onmousedown="train('Z');">
+            Z
+        </div>
+        <div class="button training" onmousedown="train('X');">
+            X
+        </div>
+        <div class="button training" onmousedown="train('C');">
+            C
+        </div>
+        <div class="button training" onmousedown="train('V');">
+            V
+        </div>
+        <div class="button training" onmousedown="train('B');">
+            B
+        </div>
+        <div class="button training" onmousedown="train('N');">
+            N
+        </div>
+        <div class="button training" onmousedown="train('M');">
+            M
+        </div>
+        <div class="button" onmousedown="train(null);">
+            Train all symbols
+        </div>
+        <div class="button" onmousedown="networks=[];document.getElementById('recognizedSymbol').innerText = '-';document.getElementById('recognizedSymbolPercentage').innerText = '-';">
             Do reset train data
         </div>
-        <div class="button" onmousedown="context.clearRect(0, 0, canvas.width, canvas.height);context2.clearRect(0, 0, canvas2.width, canvas2.height);">
+        <div class="button" onmousedown="context.clearRect(0, 0, canvas.width, canvas.height);context2.clearRect(0, 0, canvas2.width, canvas2.height);document.getElementById('recognizedSymbol').innerText = '-';document.getElementById('recognizedSymbolPercentage').innerText = '-';">
             Clear canvases
+        </div>
+        <div class="button" onmousedown="doManualTrain();document.getElementById('recognizedSymbol').innerText = '-';document.getElementById('recognizedSymbolPercentage').innerText = '-';">
+            Do manual train from input
         </div>
 
     </div>
